@@ -85,11 +85,50 @@ E_col_10 finish block*/
 	background-color: blue;
 }
 
+.row_A td,.row_B td,.row_C td,.row_D td,.row_I td,.row_J td
+{
+	background-color: green;
+}
+
+.row_G td:nth-child(-n+4){ /*moves back from 4 to start*/
+	background-color: green;
+}
+.row_G td:nth-child(n+8){ /*selects a list of items to set the colour*/
+	background-color: green;
+}
+
+.row_H td:nth-child(-n+4){
+	background-color: green;
+
+}
+.row_H td:nth-child(n+8){
+	background-color: green;
+
+}
+
+.row_F td:nth-child(-n+4){
+	background-color: green;
+
+}
+.row_F td:nth-child(n+8){/*starts at 8 and goes the the end*/
+	background-color: green;
+
+}
+
+.E_col_6, .F_col_6, .G_col_6{
+	background-color: green;
 }
 
 
 
 
+
+
+
+
+
+
+	
 
 
 
