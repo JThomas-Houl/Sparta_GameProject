@@ -8,11 +8,20 @@ $(function (event){
 		$(this).mousemove(function(event){
 			console.log("down n moveing");
 		});
+
+
+	$('td').mousemove(function(event){
+		$(this).css("background-color", "red")
+	});
+
 	});
 	pixelGrid.mouseup(function(event){
 		console.log("up");
 		$(this).off("mousemove")
 	});
+
+		
+
 
 
 
