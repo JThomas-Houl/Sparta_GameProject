@@ -21,13 +21,13 @@ $(function (event){
 
 			/*checks if the html = finishblock if yes you win
 			if the inner html is not the same then you lose*/
-				
+
 			if($(this).html() !== finishBlock.html()){
 				$('td').off();
-				console.log("you lose");
+				alert("you lose");
 
 			}else{
-				console.log("you win");
+				alert("you win");
 				$('td').off();
 			}
 
