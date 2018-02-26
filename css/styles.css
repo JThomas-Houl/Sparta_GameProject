@@ -1,5 +1,6 @@
 table, tr, td{
 	border: 1px solid black;
+
 }
 
 table{
@@ -13,6 +14,17 @@ td{
 	height: 50px;
 }
 
-.E_col_10, .E_col_1{
+.E_col_1, .E_col_10{ 
+/*start block and end block red, E_col 1 start block,
+E_col_10 finish block*/
+
 	background-color: red;
 }
+
+.pixelGrid{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	
+}	
