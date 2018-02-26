@@ -3,31 +3,21 @@ $(function (event){
 
 	var pixelGrid = $(".pixelGrid"); //pixel grid variable
 
-	pixelGrid.mousedown(function(event){//mouse down with mov
+	//on mouse click event
+	pixelGrid.mousedown(function(event){
 		console.log("down");
-		$(this).mousemove(function(event){
-			console.log("down n moveing");
+
+		//mousemove event on the td uses this to paint the color of the cell
+		$('td').mousemove(function(event){
+			$(this).css("background-color", "red");
+
+			});
+		//mouse up funtion turns off all events once the mouse is up
+		$(pixelGrid).mouseup(function(event){
+			$('td').off();
 		});
 
-
-	$('td').mousemove(function(event){
-		$(this).css("background-color", "red")
-	});
-
-	});
-	pixelGrid.mouseup(function(event){
-		console.log("up");
-		$(this).off("mousemove")
-	});
-
+		});
 		
 
-
-
-
-
-
-
-
-
-});
+	});
