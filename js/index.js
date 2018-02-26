@@ -11,6 +11,7 @@ $(function (event){
 
 	//on mouse click event you can only click on startblock once
 	startBlock.mousedown(function(event){
+		
 
 		//mousemove event on the td uses this to paint the color of the cell
 		$('td').mousemove(function(event){

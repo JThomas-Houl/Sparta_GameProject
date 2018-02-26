@@ -1,5 +1,6 @@
 table, tr, td{
 	border: 1px solid black;
+	color: transparent;
 
 }
 
@@ -120,6 +121,10 @@ E_col_10 finish block*/
 }
 
 
+
+body::selection	{
+	color: transparent;
+}
 
 
 
