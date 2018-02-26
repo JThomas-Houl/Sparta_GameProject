@@ -50,3 +50,47 @@ E_col_10 finish block*/
 	top: 43.5%;
 	background-color: blue;
 }
+
+.bottomLeftDivBB{
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 24.3%;
+	height:33%;
+	left:19.3%;
+	top: 50%;
+	background-color: yellow;
+}
+
+.bottomRightDivBB{
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 19.5%;
+	height: 33%;
+	right: 19%;
+	top: 50%;
+	background-color: yellow;
+}
+
+.bottomMiddleDivBB{
+
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 18.3%;
+	height:13%;
+	left:43.5%;
+	bottom: 17%;
+	background-color: blue;
+}
+
+}
+
+
+
+
+
+
+
+
