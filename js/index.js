@@ -1,6 +1,8 @@
 $(function (event){
 	console.log("DOM is ready");
 
+	
+
 	var pixelGrid = $(".pixelGrid"); //pixel grid variable
 	var startBlock = $(".E_col_1");
 	var finishBlock = $(".E_col_10");
