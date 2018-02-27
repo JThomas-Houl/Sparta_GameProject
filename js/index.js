@@ -19,8 +19,8 @@ $(function (event){
 
 	function resetGrid(){
 		for(var i = 0; i < tableSize; i++){ //reads table size
-			var tableCellColorInteration = $($("td")[i]).css("background-color");
-			var tableInteration = $($("td")[i]);
+			var tableCellColorInteration = $($("td")[i]).css("background-color"); //td array colors
+			var tableInteration = $($("td")[i]); //td interation
 
 		if(tableCellColorInteration == startFinishColour){ //if its red set to white
 			tableInteration.css("background-color", "white");
@@ -34,7 +34,7 @@ $(function (event){
 		}
 	}
 
-	// do{
+	do{
 
 				
 	//on mouse click event you can only click on startblock once
@@ -51,24 +51,10 @@ $(function (event){
 					//$('td').off();
 					console.log("you lose");
 					resetGrid();
-
 					
-
-					// var startAgain = prompt("Would you like to retry this level?: Enter Y for yes or N for no");
-					// if(startAgain == "Y"){
-					// 	gameStart == true;
-
-					// 	
-					// }
-					
-
-					
-					//coloured collisions working
-				}
-
-				else {
-					$(this).css("background-color", "red");
-				}
+				}else {
+						$(this).css("background-color", "red");
+					}
 
 			});
 
@@ -81,6 +67,7 @@ $(function (event){
 				if($(this).html() !== finishBlock.html()){
 					$('td').off();
 					//alert("you lose");
+					resetGrid();
 
 
 				}else{
@@ -92,7 +79,7 @@ $(function (event){
 		});
 
 
-	// }while(gameStart == false);
+	}while(gameStart == false);
 	
 
 
