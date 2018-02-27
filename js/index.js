@@ -16,7 +16,25 @@ $(function (event){
 	var gameStart = true;
 	var tableSize = $("td").length;
 
-	do{
+
+	function resetGrid(){
+		for(var i = 0; i < tableSize; i++){ //reads table size
+			var tableCellColorInteration = $($("td")[i]).css("background-color");
+			var tableInteration = $($("td")[i]);
+
+		if(tableCellColorInteration == startFinishColour){ //if its red set to white
+			tableInteration.css("background-color", "white");
+
+			if(tableInteration == startBlock || finishBlock){ //if its the start or end square turn back to red
+				startBlock.css("background-color","red");
+				finishBlock.css("background-color","red");
+
+				}
+			}
+		}
+	}
+
+	// do{
 
 				
 	//on mouse click event you can only click on startblock once
@@ -31,23 +49,10 @@ $(function (event){
 				if($(this).css("background-color") === deathColor){
 					//console.log("dead");
 					//$('td').off();
-					alert("you lose");
+					console.log("you lose");
+					resetGrid();
 
-					for(var i = 0; i < tableSize; i++){
-						console.log($($("td")[i]).css("background-color"));
-
-						if($($("td")[i]).css("background-color") == startFinishColour){
-							$($("td")[i]).css("background-color", "white");
-
-							if($($("td")[i]) == startBlock || finishBlock){
-								startBlock.css("background-color","red");
-								finishBlock.css("background-color","red");
-
-							}
-
-
-						}
-					}
+					
 
 					// var startAgain = prompt("Would you like to retry this level?: Enter Y for yes or N for no");
 					// if(startAgain == "Y"){
@@ -61,7 +66,9 @@ $(function (event){
 					//coloured collisions working
 				}
 
-				$(this).css("background-color", "red");
+				else {
+					$(this).css("background-color", "red");
+				}
 
 			});
 
@@ -73,7 +80,7 @@ $(function (event){
 
 				if($(this).html() !== finishBlock.html()){
 					$('td').off();
-					alert("you lose");
+					//alert("you lose");
 
 
 				}else{
@@ -85,7 +92,7 @@ $(function (event){
 		});
 
 
-	}while(gameStart == false);
+	// }while(gameStart == false);
 	
 
 
