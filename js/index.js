@@ -62,12 +62,31 @@ $(function (event){
 			console.log($(secondLevelGrid[i]));
 		}
 	}
+
+
+
+	function gridWipeNewLevelBuild(){
+		for(var i = 0; i < tableSize; i++){ //reads table size
+			var tableCellColorInteration = $($("td")[i]).css("background-color"); //td array colors
+			var tableInteration = $($("td")[i]); //td interation
+			for(var i = 0; i < secondLevelArray; i++){
+					var secondLevelInteration = $(secondLevelGrid[i]);
+					console.log(tableInteration, secondLevelInteration);
+				}
+
+
+			//tableInteration.css("background-color", "white");
+		}
+		
+	}
+
 	// do{
 
 	//on mouse click event you can only click on startblock once
 	startBlock.mousedown(function(event){
 		mouseIsUp = false;
-		printNewLev();
+		
+		
 
 		//mousemove event on the td uses this to paint the color of the cell
 		$('td').mousemove(function(event){
@@ -106,15 +125,15 @@ $(function (event){
 			//location.reload();
 			resetGrid();
 			
+		var userInput = prompt("y to retry, N to not");
+		if (userInput == "y"){
+			mouseIsUp == false;
+		 }
 
 
 		}
 
 
-		var userInput = prompt("y for agian");
-		if (userInput == "y"){
-			mouseIsUp == false;
-		 }
 
 		else{
 			alert("you win");
