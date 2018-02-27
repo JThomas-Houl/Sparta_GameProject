@@ -10,18 +10,18 @@ $(function (event){
 	var finishBlock = $(".E_col_10");
 
 	var deathColor = $(".A_col_1").css("background-color");
-	console.log(deathColor);
+	//console.log(deathColor);
 	var startFinishColour = $(".E_col_1").css("background-color");
 
 	var gameStart = true;
+	var tableSize = $("td").length;
 
 	do{
-		console.log("go")
 
 	
 	//on mouse click event you can only click on startblock once
 		startBlock.mousedown(function(event){
-			gameStart = false;
+			
 			
 
 			//mousemove event on the td uses this to paint the color of the cell
@@ -29,9 +29,19 @@ $(function (event){
 
 
 				if($(this).css("background-color") === deathColor){
-					console.log("dead");
-					$('td').off();
+					//console.log("dead");
+					//$('td').off();
 					alert("you lose");
+
+					var startAgain = prompt("Would you like to retry this level?: Enter Y for yes or N for no");
+					if(startAgain == "Y"){
+						gameStart == true;
+
+						for( var i = 0; i > tableSize; i++){
+							console.log($("td").css("background-color"));
+						}
+					}
+					
 
 					
 					//coloured collisions working
