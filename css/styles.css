@@ -1,6 +1,6 @@
 table, tr, td{
 	border: 1px solid black;
-	color: transparent;
+	/*color: transparent;*/
 
 }
 
@@ -132,8 +132,21 @@ body { /*disable user highlight*/
     user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
 }
 
-
-
+/*	
+NEW LEVEL:
+A_col_5, A_col_10
+B_col_5, B_col_8, B_col_10
+C_col_2, C_col_5, C_col_8, C_col_10
+D_col_1, D_col_3, D_col_8
+E_col_1, E_col_4 - 9,
+STARTBLOCK = H_col_10
+F_col_6
+G_col_1,G_col_4,G_col_6,G_col_9,G_col_10
+FINISHBLOCK = F_col_1
+H_col_6,
+I_col_2, I_col_3, I_col_5,I_col_6,I_col_10
+J_col_5, J_col_6, J_col_10
+*/ 
 
 
 
