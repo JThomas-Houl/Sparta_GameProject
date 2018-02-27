@@ -130,7 +130,20 @@ body { /*disable user highlight*/
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    margin: 0px;
+    border: 0px;
 }
+
+
+.homepage{
+	margin: 0px;
+	border: 0px;
+	position: absolute;
+	bottom: 2px;
+	right:-90px;
+}
+
+
 
 /*	
 NEW LEVEL:
