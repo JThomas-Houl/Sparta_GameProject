@@ -18,7 +18,7 @@ $(function (event){
 
 	do{
 
-	
+				
 	//on mouse click event you can only click on startblock once
 		startBlock.mousedown(function(event){
 			
@@ -33,14 +33,28 @@ $(function (event){
 					//$('td').off();
 					alert("you lose");
 
-					var startAgain = prompt("Would you like to retry this level?: Enter Y for yes or N for no");
-					if(startAgain == "Y"){
-						gameStart == true;
+					for(var i = 0; i < tableSize; i++){
+						console.log($($("td")[i]).css("background-color"));
 
-						for( var i = 0; i > tableSize; i++){
-							console.log($("td").css("background-color"));
+						if($($("td")[i]).css("background-color") == startFinishColour){
+							$($("td")[i]).css("background-color", "white");
+
+							if($($("td")[i]) == startBlock || finishBlock){
+								startBlock.css("background-color","red");
+								finishBlock.css("background-color","red");
+
+							}
+
+
 						}
 					}
+
+					// var startAgain = prompt("Would you like to retry this level?: Enter Y for yes or N for no");
+					// if(startAgain == "Y"){
+					// 	gameStart == true;
+
+					// 	
+					// }
 					
 
 					
