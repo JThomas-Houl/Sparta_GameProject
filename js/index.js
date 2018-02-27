@@ -16,6 +16,8 @@ $(function (event){
 	var gameStart = true;
 	var tableSize = $("td").length;
 
+	var mouseIsUp = false;
+
 
 	function resetGrid(){
 		for(var i = 0; i < tableSize; i++){ //reads table size
@@ -34,52 +36,72 @@ $(function (event){
 		}
 	}
 
-	do{
+	// do{
 
-				
 	//on mouse click event you can only click on startblock once
-		startBlock.mousedown(function(event){
-			
-			
+	startBlock.mousedown(function(event){
 
-			//mousemove event on the td uses this to paint the color of the cell
-			$('td').mousemove(function(event){
+		//mousemove event on the td uses this to paint the color of the cell
+		$('td').mousemove(function(event){
 
-
+			if(mouseIsUp == false) {
 				if($(this).css("background-color") === deathColor){
 					//console.log("dead");
 					//$('td').off();
-					console.log("you lose");
-					resetGrid();
+					alert("you lose");
+					location.reload();
+					//resetGrid();
 					
 				}else {
 						$(this).css("background-color", "red");
-					}
-
-			});
-
-			// //mouse up on td
-			$('td').mouseup(function(event){
-
-				/*checks if the html = finishblock if yes you win
-				if the inner html is not the same then you lose*/
-
-				if($(this).html() !== finishBlock.html()){
-					$('td').off();
-					//alert("you lose");
-					resetGrid();
-
-
-				}else{
-					alert("you win");
-					$('td').off();
 				}
+			}
 
-			});
 		});
 
+		// //mouse up on td
+	});
 
-	}while(gameStart == false);
+
+	
+	$('td').mouseup(function(event){
+		mouseIsUp = true;
+
+
+		/*checks if the html = finishblock if yes you win
+		if the inner html is not the same then you lose*/
+
+		if($(this).html() !== finishBlock.html()){
+			//$('td').off();
+			alert("you lose");
+			location.reload();
+			//resetGrid();
+
+
+		}
+
+		else{
+			alert("you win");
+			$('td').off();
+		}
+
+		// var userInput = prompt("y for agian");
+		// if (userInput == "y"){
+		// 	mouseIsUp == false;
+		// }
+
+	});
+	
+
+
+		function resetMouse(){
+			pixelGrid.mouseup(function(){
+				console.log("mouse up");
+				
+			});
+		}
+
+	// }while(gameStart == false);
 	
 
 
