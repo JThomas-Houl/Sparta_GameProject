@@ -40,17 +40,18 @@ $(function (event){
 
 	//on mouse click event you can only click on startblock once
 	startBlock.mousedown(function(event){
+		mouseIsUp = false;
 
 		//mousemove event on the td uses this to paint the color of the cell
 		$('td').mousemove(function(event){
 
 			if(mouseIsUp == false) {
 				if($(this).css("background-color") === deathColor){
-					//console.log("dead");
+					console.log("dead");
 					//$('td').off();
-					alert("you lose");
-					location.reload();
-					//resetGrid();
+					//alert("you lose");
+					//location.reload(); page reset
+					resetGrid();
 					
 				}else {
 						$(this).css("background-color", "red");
@@ -73,9 +74,10 @@ $(function (event){
 
 		if($(this).html() !== finishBlock.html()){
 			//$('td').off();
-			alert("you lose");
-			location.reload();
-			//resetGrid();
+			console.log("you lose");
+			//location.reload();
+			resetGrid();
+			
 
 
 		}
