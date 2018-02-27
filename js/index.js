@@ -1,6 +1,8 @@
 $(function (event){
 	console.log("DOM is ready");
 
+	
+
 
 
 	var pixelGrid = $(".pixelGrid"); //pixel grid variable
@@ -13,10 +15,13 @@ $(function (event){
 
 	var gameStart = true;
 
+	do{
+		console.log("go")
 
-	while(gameStart){
+	
 	//on mouse click event you can only click on startblock once
 		startBlock.mousedown(function(event){
+			gameStart = false;
 			
 
 			//mousemove event on the td uses this to paint the color of the cell
@@ -28,7 +33,7 @@ $(function (event){
 					$('td').off();
 					alert("you lose");
 
-					gameStart = false;
+					
 					//coloured collisions working
 				}
 
@@ -45,16 +50,19 @@ $(function (event){
 				if($(this).html() !== finishBlock.html()){
 					$('td').off();
 					alert("you lose");
-					gameStart = false;
+
 
 				}else{
 					alert("you win");
 					$('td').off();
-					gameStart = false;
 				}
 
 			});
 		});
-	}
+
+
+	}while(gameStart == false);
+	
+
 
 });
