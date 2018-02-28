@@ -1,7 +1,7 @@
 table, tr, td{
 	border: 1px solid black;
 	color: transparent;
-	 border-collapse: collapse;
+	border-collapse: collapse;
 
 }
 
@@ -15,5 +15,12 @@ table{
 td{
 	width: 1px;
 	height: 1px;
-	font-size: 0px;
+	font-size: 2px;
 }
+
+.pixelGrid{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}	
