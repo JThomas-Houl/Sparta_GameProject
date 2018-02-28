@@ -13,6 +13,9 @@ $(function (event){
 	var startBlock = $(".E_col_1");
 	var finishBlock = $(".E_col_10");
 
+	var startBlockV2 = $(".F_col_1_V2");
+	var finishBlockV2 = $("A_col_10_V2");
+
 	var deathColor = $(".A_col_1").css("background-color");
 	//console.log(deathColor);
 	var startFinishColour = $(".E_col_1").css("background-color");
@@ -85,27 +88,27 @@ $(function (event){
 	}
 
 
-//Button funtions
+	//Button funtions
 
-startButton.click(function(event){
-	window.location.href='/Users/tech-a25/Sparta_GameProject/index.html';
-});
+	startButton.click(function(event){
+		window.location.href='/Users/tech-a25/Sparta_GameProject/index.html';
+	});
 
-howToButton.click(function(event){
-	var HowToImage = $(".homepage").attr("src","images/coloured_lines_howTo_V2.png");
-	startButton.animate({top: "80%"});
-	howToButton.off()
+	howToButton.click(function(event){
+		var HowToImage = $(".homepage").attr("src","images/coloured_lines_howTo_V2.png");
+		startButton.animate({top: "80%"});
+		howToButton.off()
 
-});
-quitButton.click(function(event){
-	window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
-})
-
-
+	});
+	quitButton.click(function(event){
+		window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
+	})
 
 
-/*DONT NOT TOUCH ANYTHING BELOW THIS LINE OR YOU WILL BREAK THE DAMN GAME FOOL
-______________________________________________________________________________ */
+
+
+	/*DONT NOT TOUCH ANYTHING BELOW THIS LINE OR YOU WILL BREAK THE DAMN GAME FOOL
+	______________________________________________________________________________ */
 
 	//on mouse click event you can only click on startblock once
 	startBlock.mousedown(function(event){
@@ -170,19 +173,58 @@ ______________________________________________________________________________ *
 			//  	
 			// }
 		}
-
-		
-
-
-
-
-
 	});
 	
-//level change:
 
-	// }while(gameStart == false);
-	
+	startBlockV2.mousedown(function(event){
+		mouseIsUp = false;
+			//mousemove event on the td uses this to paint the color of the cell
+			$('td').mousemove(function(event){
 
+				if(mouseIsUp == false) {
+					if($(this).css("background-color") === deathColor){
+
+						console.log("dead");
+						//$('td').off();
+						//alert("you lose");
+						//location.reload(); page reset
+						resetGrid();
+						
+					}else {
+							$(this).css("background-color", "red");
+					}
+				}
+
+			});
+
+			// //mouse up on td
+	});
+
+
+
+	$('td').mouseup(function(event){
+		mouseIsUp = true;
+
+
+		/*checks if the html = finishblock if yes you win
+		if the inner html is not the same then you lose*/
+
+		if($(this).html() !== finishBlockV2.html()){
+			//$('td').off();
+			console.log("you lose");
+			//location.reload();
+			resetGrid();
+			
+		var userInput = prompt("y to retry, N to not");
+		if (userInput == "y"){
+			mouseIsUp == false;
+		 }
+
+
+		}
+		else{
+			alert("you win");
+		}
+	});
 
 });

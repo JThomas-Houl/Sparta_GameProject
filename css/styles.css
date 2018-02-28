@@ -1,4 +1,4 @@
-table, tr, td{
+table, tr, td,.pixelGride{
 	border: 1px solid black;
 	color: transparent;
 
@@ -16,7 +16,7 @@ td{
 	height: 50px;
 }
 
-.E_col_1, .E_col_10{ 
+.E_col_1, .E_col_10,.F_col_1_V2,.A_col_10_V2 { 
 /*start block and end block red, E_col 1 start block,
 E_col_10 finish block*/
 
@@ -193,6 +193,19 @@ video{
 .VideoPage{
 	background-color: #ff6b6b;
 }
+
+
+
+/*level 2 table colors*/
+.A_col_4_V2,.A_col_8_V2,.A_col_9_V2,.B_col_2_V2,.B_col_6_V2,
+.row_C_V2 td:nth-child(n+2),.D_col_7_V2,.E_col_1_V2,.E_col_2_V2,.E_col_3_V2,.E_col_4_V2,.E_col_5_V2,.E_col_9_V2,
+.F_col_3_V2,.F_col_4_V2,.F_col_5_V2,.F_col_6_V2,.F_col_7_V2,.F_col_8_V2,.G_col_1_V2,.G_col_3_V2,.G_col_4_V2,.G_col_8_V2,.G_col_10_V2,
+.H_col_3_V2,.H_col_4_V2,.H_col_6_V2,.H_col_8_V2,.H_col_10_V2,.I_col_2_V2,.I_col_3_V2,.I_col_6_V2,.I_col_8_V2,.I_col_10_V2,
+.J_col_5_V2,.J_col_6_V2,.J_col_10_V2{
+	background-color: green;
+}
+
+
 
 /*.gamePageBackground{
 	position: absolute;
