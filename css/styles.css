@@ -23,6 +23,14 @@ E_col_10 finish block*/
 	background-color: red;
 }
 
+.Green{
+	background-color: green;
+}
+
+.White{
+	background-color: white;
+}
+
 .pixelGrid{
 	position: absolute;
 	top:50%;
@@ -87,9 +95,7 @@ E_col_10 finish block*/
 	background-color: blue;
 }
 
-.Green{
-	background-color: green;
-}
+
 
 
 

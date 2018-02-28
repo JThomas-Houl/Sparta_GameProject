@@ -1,0 +1,19 @@
+table, tr, td{
+	border: 1px solid black;
+	color: transparent;
+	 border-collapse: collapse;
+
+}
+
+table{
+	 
+	    margin: 0px;
+	    border: 0px ;
+	 
+}
+
+td{
+	width: 1px;
+	height: 1px;
+	font-size: 0px;
+}
