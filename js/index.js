@@ -47,19 +47,11 @@ $(".purple").css("background-color", "purple");
 		for(var i = 0; i < tableSize; i++){ //reads table size
 			// var tableCellColorInteration =  //td array colors
 			//var tableInteration = $($("td")[i]); //td interation
-
-			if($($("td")[i]).css("background-color") == startFinishColour || startFinishColourV2){ //if its red set to white
-				$($("td")[i]).css("background-color", "white");
-			}
-			else {
-				$($("td")[i].css("background-color", "green"));
-			}
+			$($("td")[i]).css("background-color","white")
 		
 		}
-		startBlock.css("background-color","red");
-		finishBlock.css("background-color","red");
-		startBlockV2.css("background-color","red");
-		finishBlockV2.css("background-color","red");
+		$(".Red").css("background-color", "red")
+		$(".Green").css("background-color", "green")
 	}
 
 
