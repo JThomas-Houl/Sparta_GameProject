@@ -97,7 +97,9 @@ howToButton.click(function(event){
 	howToButton.off()
 
 });
-quitButton
+quitButton.click(function(event){
+	window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
+})
 
 
 
