@@ -1,5 +1,6 @@
 table, tr, td{
 	border: 1px solid black;
+	color: transparent;
 
 }
 
@@ -7,6 +8,7 @@ table{
 	    border-collapse: collapse;
 	    margin: 0px;
 	    border: 0px ;
+	 
 }
 
 td{
@@ -28,13 +30,196 @@ E_col_10 finish block*/
 	transform: translate(-50%,-50%);
 }	
 
-/*.topLeftDivBB, .topRightDivBB, .bottomLeftDivBB,.bottomRightDivBB{
+
+.topDivBB{
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 61.5%;
+	height:26.5%;
+	left:19.3%;
+	top: 17%;
 	background-color: green;
 }
 
-.topLeftDivBB{
+.middleDivBB{
+	padding: 0px;
+	margin: 0px;
 	position: absolute;
-	width: 50px
-	height:50px;
-	left: 50%;
+	width: 6%;
+	height:20%;
+	left:49.7%;
+	top: 43.5%;
+	background-color: blue;
+}
+
+.bottomLeftDivBB{
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 24.3%;
+	height:33%;
+	left:19.3%;
+	top: 50%;
+	background-color: yellow;
+}
+
+.bottomRightDivBB{
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 19.5%;
+	height: 33%;
+	right: 19%;
+	top: 50%;
+	background-color: yellow;
+}
+
+.bottomMiddleDivBB{
+
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	width: 18.3%;
+	height:13%;
+	left:43.5%;
+	bottom: 17%;
+	background-color: blue;
+}
+
+.row_A td,.row_B td,.row_C td,.row_D td,.row_I td,.row_J td
+{
+	background-color: green;
+}
+
+.row_G td:nth-child(-n+4){ /*moves back from 4 to start*/
+	background-color: green;
+}
+.row_G td:nth-child(n+8){ /*selects a list of items to set the colour*/
+	background-color: green;
+}
+
+.row_H td:nth-child(-n+4){
+	background-color: green;
+
+}
+.row_H td:nth-child(n+8){
+	background-color: green;
+
+}
+
+.row_F td:nth-child(-n+4){
+	background-color: green;
+
+}
+.row_F td:nth-child(n+8){/*starts at 8 and goes the the end*/
+	background-color: green;
+
+}
+
+.E_col_6, .F_col_6, .G_col_6{
+	background-color: green;
+}
+
+
+
+body { /*disable user highlight*/
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    margin: 0px;
+    border: 0px;
+    background-color: #ff6b6b;
+}
+
+
+.homepage{
+	margin: 0px;
+	border: 0px;
+	position: absolute;
+	
+}
+
+/*home page div buttons
+move start button down top: 80%
+hide how to button*/
+.startButton{
+    position: absolute;
+    top: 62%;
+    left: 40%;
+    padding: 5px;
+    width: 19%;
+    height: 5%;
+    background-color: transparent;
+    /*border: 2px solid black;*/
+}
+/*img{
+	max-width: 100%;
+	max-height: 100%;
 }*/
+.howToButton{
+	position: absolute;
+    top: 75%;
+    left: 40%;
+    padding: 5px;
+    width: 19%;
+    height: 5%;
+    background-color: transparent;
+    /*border: 2px solid black;*/	
+}
+
+.quitButton{
+	position: absolute;
+    top: 88.5%;
+    left: 40%;
+    padding: 5px;
+    width: 19%;
+    height: 5%;
+    background-color: transparent;
+    /*border: 2px solid black;*/
+}
+
+
+
+video{
+	position: absolute;
+	left: 15%;
+	top:5%;
+}
+
+.VideoPage{
+	background-color: #ff6b6b;
+}
+
+/*.gamePageBackground{
+	position: absolute;
+	left:0.09%;
+}*/
+/*	
+NEW LEVEL:
+A_col_5, A_col_10
+B_col_5, B_col_8, B_col_10
+C_col_2, C_col_5, C_col_8, C_col_10
+D_col_1, D_col_3, D_col_8
+E_col_1, E_col_4 - 9,
+STARTBLOCK = H_col_10
+F_col_6
+G_col_1,G_col_4,G_col_6,G_col_9,G_col_10
+FINISHBLOCK = F_col_1
+H_col_6,
+I_col_2, I_col_3, I_col_5,I_col_6,I_col_10
+J_col_5, J_col_6, J_col_10
+*/ 
+
+
+
+
+
+	
+
+
+
+
