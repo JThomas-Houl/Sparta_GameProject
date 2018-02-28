@@ -1,6 +1,8 @@
 $(function (event){
 	console.log("DOM is ready");
 
+$(".purple").css("background-color", "purple");
+
 	var startButton = $(".startButton");
 
 	var howToButton = $(".howToButton");
@@ -14,11 +16,14 @@ $(function (event){
 	var finishBlock = $(".E_col_10");
 
 	var startBlockV2 = $(".F_col_1_V2");
-	var finishBlockV2 = $("A_col_10_V2");
+	var finishBlockV2 = $(".A_col_10_V2");
 
 	var deathColor = $(".A_col_1").css("background-color");
+
+	var deathColorV2 = $(".A_col_4_V2").css("background-color");	
 	//console.log(deathColor);
 	var startFinishColour = $(".E_col_1").css("background-color");
+	var startFinishColourV2 = $(".F_col_1_V2").css("background-color");
 
 	var gameStart = true;
 	var tableSize = $("td").length;
@@ -40,52 +45,24 @@ $(function (event){
 
 	function resetGrid(){
 		for(var i = 0; i < tableSize; i++){ //reads table size
-			var tableCellColorInteration = $($("td")[i]).css("background-color"); //td array colors
-			var tableInteration = $($("td")[i]); //td interation
+			// var tableCellColorInteration =  //td array colors
+			//var tableInteration = $($("td")[i]); //td interation
 
-		if(tableCellColorInteration == startFinishColour){ //if its red set to white
-			tableInteration.css("background-color", "white");
-
-			if(tableInteration == startBlock || finishBlock){ //if its the start or end square turn back to red
-				startBlock.css("background-color","red");
-				finishBlock.css("background-color","red");
-
-				}
+			if($($("td")[i]).css("background-color") == startFinishColour || startFinishColourV2){ //if its red set to white
+				$($("td")[i]).css("background-color", "white");
 			}
-		}
-	}
-
-	function gridWipeNewLevel(){
-		for(var i = 0; i < tableSize; i++){ //reads table size
-			var tableCellColorInteration = $($("td")[i]).css("background-color"); //td array colors
-			var tableInteration = $($("td")[i]); //td interation
-			tableInteration.css("background-color", "white");
-		}
+			else {
+				$($("td")[i].css("background-color", "green"));
+			}
 		
-	}
-
-	function printNewLev(){
-		for(var i = 0; i < secondLevelArray; i++){
-			console.log($(secondLevelGrid[i]));
 		}
+		startBlock.css("background-color","red");
+		finishBlock.css("background-color","red");
+		startBlockV2.css("background-color","red");
+		finishBlockV2.css("background-color","red");
 	}
 
 
-
-	function gridWipeNewLevelBuild(){
-		for(var i = 0; i < tableSize; i++){ //reads table size
-			var tableCellColorInteration = $($("td")[i]).css("background-color"); //td array colors
-			var tableInteration = $($("td")[i]); //td interation
-			for(var i = 0; i < secondLevelArray; i++){
-					var secondLevelInteration = $(secondLevelGrid[i]);
-					console.log(tableInteration, secondLevelInteration);
-				}
-
-
-			//tableInteration.css("background-color", "white");
-		}
-		
-	}
 
 
 	//Button funtions
@@ -182,7 +159,7 @@ $(function (event){
 			$('td').mousemove(function(event){
 
 				if(mouseIsUp == false) {
-					if($(this).css("background-color") === deathColor){
+					if($(this).css("background-color") === deathColorV2){
 
 						console.log("dead");
 						//$('td').off();
