@@ -3,7 +3,7 @@ $(function (event){
 
 	var startButton = $(".startButton");
 
-	//var howToButton = $(".howToButton");
+	var howToButton = $(".howToButton");
 
 	var quitButton = $(".quitButton");
 
@@ -84,23 +84,28 @@ $(function (event){
 		
 	}
 
-	// do{
+
+//Button funtions
+
+startButton.click(function(event){
+	window.location.href='/Users/tech-a25/Sparta_GameProject/index.html';
+});
+
+howToButton.click(function(event){
+	var HowToImage = $(".homepage").attr("src","images/coloured_lines_howTo_V2.png");
+	startButton.animate({top: "80%"});
+	howToButton.off()
+
+});
+quitButton
+
+
+
+
+/*DONT NOT TOUCH ANYTHING BELOW THIS LINE OR YOU WILL BREAK THE DAMN GAME FOOL
+______________________________________________________________________________ */
 
 	//on mouse click event you can only click on startblock once
-
-	$(".bodyHolder").click(function(event){
-		console.log('hide me');
-	});
-
-	// howTobutton.click(function(event){
-	// 	console.log('how to');
-	// });
-
-	// $(".quitButton")click(function(event){
-	// console.log('quit');
-	// });
-
-
 	startBlock.mousedown(function(event){
 		mouseIsUp = false;
 		
