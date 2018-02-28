@@ -130,6 +130,52 @@ body { /*disable user highlight*/
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    margin: 0px;
+    border: 0px;
+}
+
+
+.homepage{
+	margin: 0px;
+	border: 0px;
+	position: absolute;
+	
+}
+
+/*home page div buttons
+move start button down top: 80%
+hide how to button*/
+.startButton{
+    position: absolute;
+    top: 62%;
+    left: 49.5%;
+    padding: 5px;
+    width: 19%;
+    height: 5%;
+    background-color: transparent;
+    border: 2px solid black;
+}
+
+.howToButton{
+	position: absolute;
+    top: 75%;
+    left: 49.5%;
+    padding: 5px;
+    width: 19%;
+    height: 5%;
+    background-color: transparent;
+    border: 2px solid black;	
+}
+
+.quitButton{
+	position: absolute;
+    top: 88.5%;
+    left: 49.5%;
+    padding: 5px;
+    width: 19%;
+    height: 5%;
+    background-color: transparent;
+    border: 2px solid black;
 }
 
 /*	

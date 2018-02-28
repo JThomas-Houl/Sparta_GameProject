@@ -1,7 +1,11 @@
 $(function (event){
 	console.log("DOM is ready");
 
-	
+	var startButton = $(".startButton");
+
+	//var howToButton = $(".howToButton");
+
+	var quitButton = $(".quitButton");
 
 
 
@@ -83,6 +87,20 @@ $(function (event){
 	// do{
 
 	//on mouse click event you can only click on startblock once
+
+	$(".bodyHolder").click(function(event){
+		console.log('hide me');
+	});
+
+	// howTobutton.click(function(event){
+	// 	console.log('how to');
+	// });
+
+	// $(".quitButton")click(function(event){
+	// console.log('quit');
+	// });
+
+
 	startBlock.mousedown(function(event){
 		mouseIsUp = false;
 		
