@@ -1,7 +1,8 @@
 $(function (event){
-	console.log("DOM is ready");
+	console.log(window.location.href);
 
-$(".purple").css("background-color", "purple");
+	var White = $(".White").css("background-color");
+	var Red = $(".FinishBlock").css("background-color");
 
 	var startButton = $(".startButton");
 
@@ -9,6 +10,14 @@ $(".purple").css("background-color", "purple");
 
 	var quitButton = $(".quitButton");
 
+	var quitButtonModal = $(".quitButtonModal");
+
+	var retryButton = $(".retryButtonModal");
+
+	var level_1 = "/Users/tech-a25/Sparta_GameProject/index.html"
+	var level_2 = '/Users/tech-a25/Sparta_GameProject/level_2.html'
+	var level_3 = '/Users/tech-a25/Sparta_GameProject/level_3.html'
+	var WinPage = '/Users/tech-a25/Sparta_GameProject/win.html'
 
 
 	var pixelGrid = $(".pixelGrid"); //pixel grid variable
@@ -45,8 +54,25 @@ $(".purple").css("background-color", "purple");
 		$(".Green").css("background-color", "green")
 	}
 
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the button that opens the modal
+	var btn = document.getElementsByClassName("innerDiv")[0];
 
 
+	// When the user clicks on the button, open the modal 
+	var jazz = function() {
+	    modal.style.display = "block";
+	    mouseIsUp = true;
+	}
+
+	 function retryCloseIt(event) {
+	        modal.style.display = "none";
+	        resetGrid();
+	}
+
+	
 
 	//Button funtions
 
@@ -64,7 +90,14 @@ $(".purple").css("background-color", "purple");
 		window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
 	})
 
+	quitButtonModal.click(function(event){
+		window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
+	})
 
+
+	retryButton.click(function(event){
+		retryCloseIt(event);
+	})
 
 
 	/*DONT NOT TOUCH ANYTHING BELOW THIS LINE OR YOU WILL BREAK THE DAMN GAME FOOL
@@ -81,12 +114,8 @@ $(".purple").css("background-color", "purple");
 
 			if(mouseIsUp == false) {
 				if($(this).css("background-color") === $(".Green").css("background-color")){
-
-					console.log("dead");
-					//$('td').off();
-					//alert("you lose");
-					//location.reload(); page reset
-					resetGrid();
+					jazz();
+					
 					
 				}else {
 						$(this).css("background-color", "red");
@@ -108,40 +137,25 @@ $(".purple").css("background-color", "purple");
 		if the inner html is not the same then you lose*/
 
 		if($(this).html() !== $(".FinishBlock").html()){
-			//$('td').off();
-			console.log("you lose");
-			//location.reload();
-			resetGrid();
+			jazz();	
 		}
 		else if($(".White").css("background-color") === $(".FinishBlock").css("background-color")){
-			alert("you win");
+			if(window.location.href == "file:///Users/tech-a25/Sparta_GameProject/index.html" ){
+				window.location.href = level_2;
+			} else if(window.location.href == "file:///Users/tech-a25/Sparta_GameProject/level_2.html") {
+				window.location.href = level_3;
+			} else{
+				window.location.href = WinPage;
+
+			}
 		}
-		var userInput = prompt("y to retry, N to not");
-		if (userInput == "y"){
-			mouseIsUp == false;
-		 }
+		
+		
+		
 
 	});
 	
 
-	// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementsByClassName("innerDiv")[0];
-
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 });
