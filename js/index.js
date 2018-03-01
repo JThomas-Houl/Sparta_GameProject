@@ -124,55 +124,24 @@ $(".purple").css("background-color", "purple");
 	});
 	
 
-	// startBlockV2.mousedown(function(event){
-	// 	mouseIsUp = false;
-	// 		//mousemove event on the td uses this to paint the color of the cell
-	// 		$('td').mousemove(function(event){
+	// Get the modal
+var modal = document.getElementById('myModal');
 
-	// 			if(mouseIsUp == false) {
-	// 				if($(this).css("background-color") === $(".Green").css("background-color")){
-
-	// 					console.log("dead");
-	// 					//$('td').off();
-	// 					//alert("you lose");
-	// 					//location.reload(); page reset
-	// 					resetGrid();
-						
-	// 				}else {
-	// 						$(this).css("background-color", "red");
-	// 				}
-	// 			}
-
-	// 		});
-
-	// 		// //mouse up on td
-	// });
+// Get the button that opens the modal
+var btn = document.getElementsByClassName("innerDiv")[0];
 
 
-
-	// $('td').mouseup(function(event){
-	// 	mouseIsUp = true;
-
-
-	// 	/*checks if the html = finishblock if yes you win
-	// 	if the inner html is not the same then you lose*/
-
-	// 	if($(this).html() !== $(".FinishBlock")){
-	// 		//$('td').off();
-	// 		console.log("you lose");
-	// 		//location.reload();
-	// 		resetGrid();
-			
-	// 	var userInput = prompt("y to retry, N to not");
-	// 	if (userInput == "y"){
-	// 		mouseIsUp == false;
-	// 	 }
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
 
 
-	// 	}
-	// 	else{
-	// 		alert("you win");
-	// 	}
-	// });
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 });

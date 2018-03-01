@@ -14,16 +14,16 @@ table{
 
 td{
 	width: 45px;
-	height: 37px;
+	height: 40px;
 	font-size: 5px;
 }
 
 .pixelGrid{
 	position: absolute;
-	top:21%;
-	left:34%;
-	/*transform: translate(-50%,-50%);*/
-}	
+	top:45%;
+	left:45%;
+	transform: translate(-50%,-50%);
+}		
 
 .Red{ 
 /*start block and end block red, E_col 1 start block,

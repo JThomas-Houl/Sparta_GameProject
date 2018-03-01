@@ -171,41 +171,48 @@ video{
 }
 
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #ff6b6b; /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-/*level 2 table colors*/
+/* Modal Content/Box */
+.modal-content {
+    background-color: #ff6b6b;
+    padding: 20px;
+    border: 1px solid #888;
+    display: block;
+    margin: 0 auto;
+    margin-top: 12.5%;
+    width: 50%;
+    
+}
+.retryButtonModal{
+    position: absolute;
+    margin: 0 auto;
+    left: 25%;
+    bottom: 25%;
+}
 
+.quitButtonModal{
+    position: absolute;
+    margin: 0 auto;
+    right: 25%;
+    bottom: 25%;
+}
 
-
-
-
-
-
-/*.gamePageBackground{
-	position: absolute;
-	left:0.09%;
-}*/
-/*	
-NEW LEVEL:
-A_col_5, A_col_10
-B_col_5, B_col_8, B_col_10
-C_col_2, C_col_5, C_col_8, C_col_10
-D_col_1, D_col_3, D_col_8
-E_col_1, E_col_4 - 9,
-STARTBLOCK = H_col_10
-F_col_6
-G_col_1,G_col_4,G_col_6,G_col_9,G_col_10
-FINISHBLOCK = F_col_1
-H_col_6,
-I_col_2, I_col_3, I_col_5,I_col_6,I_col_10
-J_col_5, J_col_6, J_col_10
-*/ 
-
-
-
-
-
-	
-
-
-
-
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
