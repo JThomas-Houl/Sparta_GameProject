@@ -1,56 +1,43 @@
-$(function (event){
-	console.log(window.location.href);
-
+$(function (event){ //on open page event listener 
+	
+	//color vars for white and red
 	var White = $(".White").css("background-color");
 	var Red = $(".FinishBlock").css("background-color");
 
+	//calls the the button classes
 	var startButton = $(".startButton");
-
 	var howToButton = $(".howToButton");
-
 	var quitButton = $(".quitButton");
-
 	var quitButtonModal = $(".quitButtonModal");
-
 	var retryButton = $(".retryButtonModal");
 
+	//Level urls and win page
 	var level_1 = "/Users/tech-a25/Sparta_GameProject/index.html"
 	var level_2 = '/Users/tech-a25/Sparta_GameProject/level_2.html'
 	var level_3 = '/Users/tech-a25/Sparta_GameProject/level_3.html'
 	var WinPage = '/Users/tech-a25/Sparta_GameProject/win.html'
 
+	//pixel grid variable
+	var pixelGrid = $(".pixelGrid"); 
 
-	var pixelGrid = $(".pixelGrid"); //pixel grid variable
-	var startBlock = $(".E_col_1");
-	var finishBlock = $(".E_col_10");
-
-	var startBlockV2 = $(".F_col_1_V2");
-	var finishBlockV2 = $(".A_col_10_V2");
-
-	var deathColor = $(".A_col_1").css("background-color");
-
-	var deathColorV2 = $(".A_col_4_V2").css("background-color");	
-	//console.log(deathColor);
-	var startFinishColour = $(".E_col_1").css("background-color");
-	var startFinishColourV2 = $(".F_col_1_V2").css("background-color");
-
-	var gameStart = true;
+	//table size 100
 	var tableSize = $("td").length;
 
+	//mouse up var
 	var mouseIsUp = false;
 
-	var startBlockLevel2 = $("H_col_10");
-
-	var finishBlockLevel2 = $("F_col_1");
+	
 
 	function resetGrid(){
 		for(var i = 0; i < tableSize; i++){ //reads table size
-			// var tableCellColorInteration =  //td array colors
-			//var tableInteration = $($("td")[i]); //td interation
+			//checks each td colour
 			$($("td")[i]).css("background-color","white")
 		
 		}
+		//sets every class of red to the colour red
 		$(".Red").css("background-color", "red")
+
+		//sets every class of red to the colour red
 		$(".Green").css("background-color", "green")
 	}
 
@@ -62,7 +49,7 @@ $(function (event){
 
 
 	// When the user clicks on the button, open the modal 
-	var jazz = function() {
+	var modalClick = function() {
 	    modal.style.display = "block";
 	    mouseIsUp = true;
 	}
@@ -75,26 +62,29 @@ $(function (event){
 	
 
 	//Button funtions
-
+	//Start button takes you to the first page
 	startButton.click(function(event){
 		window.location.href='/Users/tech-a25/Sparta_GameProject/index.html';
 	});
 
+	//How To button switches the image and to how to image and moves the start button down to new postion
 	howToButton.click(function(event){
 		var HowToImage = $(".homepage").attr("src","images/coloured_lines_howTo_V2.png");
 		startButton.animate({top: "80%"});
 		howToButton.off()
-
 	});
+
+	//quit button takes you to the video of the alpca only works on the start page and how to
 	quitButton.click(function(event){
 		window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
 	})
 
+	//quit button takes you to the video of the alpca works with the modal
 	quitButtonModal.click(function(event){
 		window.location.href='/Users/tech-a25/Sparta_GameProject/quit_vid.html';
 	})
 
-
+	//retry button resets the grid and closes the modal
 	retryButton.click(function(event){
 		retryCloseIt(event);
 	})
@@ -112,19 +102,21 @@ $(function (event){
 		//mousemove event on the td uses this to paint the color of the cell
 		$('td').mousemove(function(event){
 
+			//sets mouse up to false once the mouse starts to move over the td's
 			if(mouseIsUp == false) {
+				//if the colour is green then start the modal on the screen
 				if($(this).css("background-color") === $(".Green").css("background-color")){
-					jazz();
+					modalClick(); //called modalClick cause its another word do doing things 
 					
 					
 				}else {
+						//sets the colour the red
 						$(this).css("background-color", "red");
 				}
 			}
 
 		});
 
-		// //mouse up on td
 	});
 
 
@@ -137,15 +129,21 @@ $(function (event){
 		if the inner html is not the same then you lose*/
 
 		if($(this).html() !== $(".FinishBlock").html()){
-			jazz();	
+			modalClick();	
 		}
+		//checks if all the whites are red if not you can't win
+		//if they are all red and your on the finish square you win
 		else if($(".White").css("background-color") === $(".FinishBlock").css("background-color")){
+			//if the url is the first level then take you to the second
 			if(window.location.href == "file:///Users/tech-a25/Sparta_GameProject/index.html" ){
 				window.location.href = level_2;
+
 			} else if(window.location.href == "file:///Users/tech-a25/Sparta_GameProject/level_2.html") {
 				window.location.href = level_3;
+				//if url is level 2 then take to level 3
 			} else{
 				window.location.href = WinPage;
+				//if you at level 3 then take me to win page
 
 			}
 		}

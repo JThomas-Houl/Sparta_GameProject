@@ -17,8 +17,6 @@ td{
 }
 
 .Red{ 
-/*start block and end block red, E_col 1 start block,
-E_col_10 finish block*/
 
 	background-color: red;
 }
@@ -119,9 +117,7 @@ body { /*disable user highlight*/
 	
 }
 
-/*home page div buttons
-move start button down top: 80%
-hide how to button*/
+/*home page */
 .startButton{
     position: absolute;
     top: 62%;
@@ -130,12 +126,9 @@ hide how to button*/
     width: 19%;
     height: 5%;
     background-color: transparent;
-    /*border: 2px solid black;*/
+    
 }
-/*img{
-	max-width: 100%;
-	max-height: 100%;
-}*/
+
 .howToButton{
 	position: absolute;
     top: 75%;
@@ -144,7 +137,7 @@ hide how to button*/
     width: 19%;
     height: 5%;
     background-color: transparent;
-    /*border: 2px solid black;*/	
+    	
 }
 
 .quitButton{
@@ -155,7 +148,7 @@ hide how to button*/
     width: 19%;
     height: 5%;
     background-color: transparent;
-    /*border: 2px solid black;*/
+   
 }
 
 
